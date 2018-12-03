@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane prefHeight="599.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SwapUIController">
+    <children>
+        <Pane layoutY="1.0" prefHeight="680.0" prefWidth="640.0">
+            <children>
+                <ScrollPane fx:id="firstScrollPane" layoutX="211.0" layoutY="56.0" prefHeight="298.0" prefWidth="219.0">
+                    <content>
+                        <ListView fx:id="leftViewList" layoutX="211.0" layoutY="57.0" prefHeight="296.0" prefWidth="215.0" />
+                    </content>
+                </ScrollPane>
+                <Button layoutX="118.0" layoutY="548.0" mnemonicParsing="false" onMouseClicked="#randomInsertPage" text="随机生成" />
+                <TextField fx:id="insertPageNumTextField" layoutX="361.0" layoutY="454.0" promptText="插入的页面号" />
+                <Button layoutX="434.0" layoutY="548.0" mnemonicParsing="false" onMouseClicked="#insertPage" text="插入页面" />
+                <Label layoutX="77.0" layoutY="420.0" text="缺页率" />
+                <Label layoutX="61.0" layoutY="460.0" text="当前总个数" />
+                <Label fx:id="lostRatio" layoutX="155.0" layoutY="420.0" text="Label" />
+                <Label fx:id="serialize" layoutX="155.0" layoutY="460.0" text="Label" />
+                <Label layoutX="77.0" layoutY="504.0" text="缺页数" />
+            <Label fx:id="lostPage" layoutX="155.0" layoutY="504.0" text="Label" />
+            <Label fx:id="curPageIndex" layoutX="316.0" layoutY="24.0" text="0" />
+            <Button layoutX="104.0" layoutY="188.0" mnemonicParsing="false" text="前一个状态" />
+            <Button layoutX="434.0" layoutY="188.0" mnemonicParsing="false" text="后一个状态" />
+            <MenuBar layoutX="8.0" layoutY="6.0">
+              <menus>
+                <Menu fx:id="selectModelMenu" mnemonicParsing="false" text="模式">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#selectModelMenuItemClicked" text="FIFO" />
+                        <MenuItem mnemonicParsing="false" onAction="#selectModelMenuItemClicked" text="OPT" />
+                        <MenuItem mnemonicParsing="false" onAction="#selectModelMenuItemClicked" text="LFU" />
+                        <MenuItem mnemonicParsing="false" onAction="#selectModelMenuItemClicked" text="LRU" />
+                        <MenuItem mnemonicParsing="false" onAction="#selectModelMenuItemClicked" text="CLOCK" />
+                        <MenuItem mnemonicParsing="false" onAction="#selectModelMenuItemClicked" text="ECLOCK" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>
